@@ -66,6 +66,7 @@ function Users() {
               <th>Username</th>
               <th>Email</th>
               <th>Team</th>
+              <th>Points</th>
               <th>Joined Date</th>
             </tr>
           </thead>
@@ -73,15 +74,24 @@ function Users() {
             {users.length > 0 ? (
               users.map((user) => (
                 <tr key={user.id}>
-                  <td>{user.username}</td>
+                  <td><strong>{user.username}</strong></td>
                   <td>{user.email}</td>
-                  <td>{user.team_name || user.team || 'No Team'}</td>
-                  <td>{new Date(user.date_joined).toLocaleDateString()}</td>
+                  <td>
+                    {user.team_name ? (
+                      <span className="badge bg-info text-dark">{user.team_name}</span>
+                    ) : (
+                      <span className="badge bg-secondary">No Team</span>
+                    )}
+                  </td>
+                  <td>
+                    <span className="badge bg-warning text-dark">{user.points || 0} pts</span>
+                  </td>
+                  <td>{new Date(user.created_at).toLocaleDateString()}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="text-center">No users found</td>
+                <td colSpan="5" className="text-center">No users found</td>
               </tr>
             )}
           </tbody>

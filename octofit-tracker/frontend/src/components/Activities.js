@@ -74,10 +74,12 @@ function Activities() {
             {activities.length > 0 ? (
               activities.map((activity) => (
                 <tr key={activity.id}>
-                  <td>{activity.user_name || activity.user || 'N/A'}</td>
-                  <td>{activity.activity_type}</td>
-                  <td>{activity.duration}</td>
-                  <td>{activity.calories}</td>
+                  <td><strong>{activity.user_name || 'N/A'}</strong></td>
+                  <td>
+                    <span className="badge bg-primary">{activity.activity_type}</span>
+                  </td>
+                  <td>{activity.duration} min</td>
+                  <td><span className="badge bg-danger">{activity.calories} cal</span></td>
                   <td>{new Date(activity.date).toLocaleDateString()}</td>
                 </tr>
               ))

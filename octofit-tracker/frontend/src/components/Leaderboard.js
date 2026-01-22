@@ -81,9 +81,9 @@ function Leaderboard() {
               leaderboard.map((entry, index) => (
                 <tr key={entry.id || index}>
                   <td>{getRankBadge(index + 1)}</td>
-                  <td><strong>{entry.user_name || entry.user || 'N/A'}</strong></td>
+                  <td><strong>{entry.user_name || 'N/A'}</strong></td>
                   <td><span className="badge bg-danger">{entry.total_calories} cal</span></td>
-                  <td><span className="badge bg-primary">{entry.activities_count}</span></td>
+                  <td><span className="badge bg-primary">{entry.total_activities}</span></td>
                 </tr>
               ))
             ) : (

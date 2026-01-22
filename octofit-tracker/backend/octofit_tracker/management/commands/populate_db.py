@@ -53,45 +53,60 @@ class Command(BaseCommand):
                 '_id': 1,
                 'username': 'ironman',
                 'email': 'tony.stark@marvel.com',
-                'first_name': 'Tony',
-                'last_name': 'Stark',
-                'team_id': 1,
+                'password': 'marvel123',
+                'profile': {
+                    'first_name': 'Tony',
+                    'last_name': 'Stark',
+                    'team_id': 1
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 2,
                 'username': 'captainamerica',
                 'email': 'steve.rogers@marvel.com',
-                'first_name': 'Steve',
-                'last_name': 'Rogers',
-                'team_id': 1,
+                'password': 'marvel123',
+                'profile': {
+                    'first_name': 'Steve',
+                    'last_name': 'Rogers',
+                    'team_id': 1
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 3,
                 'username': 'blackwidow',
                 'email': 'natasha.romanoff@marvel.com',
-                'first_name': 'Natasha',
-                'last_name': 'Romanoff',
-                'team_id': 1,
+                'password': 'marvel123',
+                'profile': {
+                    'first_name': 'Natasha',
+                    'last_name': 'Romanoff',
+                    'team_id': 1
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 4,
                 'username': 'thor',
                 'email': 'thor.odinson@marvel.com',
-                'first_name': 'Thor',
-                'last_name': 'Odinson',
-                'team_id': 1,
+                'password': 'marvel123',
+                'profile': {
+                    'first_name': 'Thor',
+                    'last_name': 'Odinson',
+                    'team_id': 1
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 5,
                 'username': 'hulk',
                 'email': 'bruce.banner@marvel.com',
-                'first_name': 'Bruce',
-                'last_name': 'Banner',
-                'team_id': 1,
+                'password': 'marvel123',
+                'profile': {
+                    'first_name': 'Bruce',
+                    'last_name': 'Banner',
+                    'team_id': 1
+                },
                 'created_at': datetime.now()
             },
             # Team DC
@@ -99,45 +114,60 @@ class Command(BaseCommand):
                 '_id': 6,
                 'username': 'batman',
                 'email': 'bruce.wayne@dc.com',
-                'first_name': 'Bruce',
-                'last_name': 'Wayne',
-                'team_id': 2,
+                'password': 'dc123',
+                'profile': {
+                    'first_name': 'Bruce',
+                    'last_name': 'Wayne',
+                    'team_id': 2
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 7,
                 'username': 'superman',
                 'email': 'clark.kent@dc.com',
-                'first_name': 'Clark',
-                'last_name': 'Kent',
-                'team_id': 2,
+                'password': 'dc123',
+                'profile': {
+                    'first_name': 'Clark',
+                    'last_name': 'Kent',
+                    'team_id': 2
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 8,
                 'username': 'wonderwoman',
                 'email': 'diana.prince@dc.com',
-                'first_name': 'Diana',
-                'last_name': 'Prince',
-                'team_id': 2,
+                'password': 'dc123',
+                'profile': {
+                    'first_name': 'Diana',
+                    'last_name': 'Prince',
+                    'team_id': 2
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 9,
                 'username': 'flash',
                 'email': 'barry.allen@dc.com',
-                'first_name': 'Barry',
-                'last_name': 'Allen',
-                'team_id': 2,
+                'password': 'dc123',
+                'profile': {
+                    'first_name': 'Barry',
+                    'last_name': 'Allen',
+                    'team_id': 2
+                },
                 'created_at': datetime.now()
             },
             {
                 '_id': 10,
                 'username': 'aquaman',
                 'email': 'arthur.curry@dc.com',
-                'first_name': 'Arthur',
-                'last_name': 'Curry',
-                'team_id': 2,
+                'password': 'dc123',
+                'profile': {
+                    'first_name': 'Arthur',
+                    'last_name': 'Curry',
+                    'team_id': 2
+                },
                 'created_at': datetime.now()
             }
         ]
@@ -192,7 +222,7 @@ class Command(BaseCommand):
                 '_id': user['_id'],
                 'user_id': user['_id'],
                 'username': user['username'],
-                'team_id': user['team_id'],
+                'team_id': user['profile']['team_id'],
                 'total_workouts': len(user_activities),
                 'total_duration_minutes': total_duration,
                 'total_calories': total_calories,
